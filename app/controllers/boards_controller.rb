@@ -16,6 +16,20 @@ class BoardsController < ApplicationController
     @board = Board.find(params[:id])
   end
 
+  def edit
+    @board = Board.find(params[:id])
+  end
+
+  def update
+    board = Board.find(params[:id])
+    board.update(board_params)
+
+    redirect_to board
+  end
+
+  def destroy
+    
+  end
   private
 
   def board_params
