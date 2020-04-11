@@ -15,6 +15,11 @@
   </div>
   <div class="card-body">
     <p class="card-text"><%= simple_format(@board.body) %></p>
-    <p class="text-right font-weight-bold mr-10">作成者名</p>
+    <p class="text-right font-weight-bold mr-10"><%= @board.name %></p>
   </div>
 </div>
+<div class="p-comment__list">
+  <div class="p-comment__listTitle">コメント</div>
+  <%= render @board.comments %>
+</div>
+<%= render partial: 'comments/form', locals: { comment: @comment } %>
